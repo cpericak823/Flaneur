@@ -17,6 +17,7 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Require external files
+require("./app/components/utils/helper.js");
 require("./routes/routes.js");
 
 //Require db connection
