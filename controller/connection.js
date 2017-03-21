@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+var Promise = require("bluebird");
+mongoose.Promise = Promise;
 
 //Initialize Mongoose
 mongoose.connect('mongodb://localhost/flaneur');
