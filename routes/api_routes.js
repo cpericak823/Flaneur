@@ -13,8 +13,11 @@ var yelp = new Yelp({
 });
 
 module.exports = function(app){
+// app.get("/", function (req, res) {
+//     res.sendFile(__dirname + "../public/index.html");
+// }),
 app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/public/index.html");
+    res.sendFile(__dirname + "../public/map.html");
 }),
 app.get("/api/yelp", function (req, res) {
     yelp.search({ term: 'attractions', location: location })

@@ -1,9 +1,10 @@
 // Include the Main React Dependencies
 var React = require("react");
 var ReactDOM = require("react-dom");
+var Main = require("./components/main.js")
 
-// Grabs the Routes
-var routes = require("../routes/routes.js");
 
-// Renders the contents according to the route page.
-ReactDOM.render(routes, document.getElementById("app"));
+var routes = require("./config/frontend_routes.js");
+var where = document.getElementById("app")
+
+ReactDOM.render(routes, where);
