@@ -34,14 +34,15 @@ module.exports = (
   // The high level component is the Router component
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
-      <Route path="/map" component={GenerateMap} />
+      <Route path="map" component={GenerateMap} />
+      <Route path="search" component={SearchForm} />
       {/* list the path to show the appropriate component */}
-      {/*<Route path="/attractions" component={AttractionsList} />
-      <Route path="/myattractions" component={SelectedAttractions} />
+      {/*<Route path="attractions" component={AttractionsList} />
+      <Route path="myattractions" component={SelectedAttractions} />
       
 
       {/* If user selects any other path... we get the Info Route */}
-      {/*<IndexRoute component={Main} />*/}
+      <IndexRoute component={Main} />
 
     </Route>
   </Router>
