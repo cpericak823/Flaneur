@@ -1,4 +1,9 @@
 var React = require("react");
+// var Antd = require("antd");
+var Button = require('antd/lib/button');
+var Select = require('antd/lib/select');
+var Option = Select.Option;
+
 
 var SearchForm = React.createClass({
      // Form Event Handlers
@@ -60,6 +65,4 @@ SearchForm.propTypes = {
   defaultCity: React.PropTypes.string,
  
 };
-
-
     module.exports = SearchForm;

@@ -14,7 +14,7 @@ var yelp = new Yelp({
 
 module.exports = function(app){
 
-app.get("/api/yelp", function (req, res) {
+app.post("/search", function (req, res) {
     yelp.search({ term: 'attractions', location: location })
         .then(function (data) {
             //return all the data (will need to adjust to display id, location)
@@ -24,4 +24,5 @@ app.get("/api/yelp", function (req, res) {
             console.error(err);
         });
 })
+//add .save() to save yelp data to database
 };
