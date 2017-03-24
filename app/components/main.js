@@ -1,6 +1,7 @@
 var React = require("react");
 var SearchForm = require("./search_form.js");
 // var GenerateMap = require("./map.js");
+// var AttractionsList = require("./attractions_list.js");
 var axios = require("axios");
 
 var Main = React.createClass({
@@ -15,16 +16,16 @@ var Main = React.createClass({
             loading: false
         });
     },
-    searchCity(searchObj) {
-        // this.startLoading();
-        axios.get("/search",searchObj) 
+    searchCity(location) {
+        this.startLoading();
+        axios.post("/search",location) 
             // yelp.search({ term: 'attractions', location: "chicago" })
                 .then(function() {
                     //return all the data (will need to adjust to display id, location)
                     // res.json(data.businesses);
                 })
                 .catch(function (err) {
-                    // this.endLoading();
+                    this.endLoading();
                     console.error(err); 
                 });
         // })
@@ -52,9 +53,10 @@ var Main = React.createClass({
                     <h2>Search for a City</h2>
                     <SearchForm
                         loading={this.state.loading}
-                        submitAction={(searchObj) => this.searchCity(searchObj)}
+                        submitAction={(location) => this.searchCity(location)}
                         defaultCity={'Chicago'}
                     />
+                    {/*<AttractionsList />*/}
                     {/*{this.props.children}*/}
                 </div>
             </div>

@@ -14,7 +14,7 @@ var yelp = new Yelp({
 
 module.exports = function(app){
 
-app.get("/search", function (req, res) {
+app.post("/search", function (req, res) {
     yelp.search({ term: 'attractions', location: location })
         .then(function (data) {
             //return all the data (will need to adjust to display id, location)
