@@ -2,13 +2,6 @@ var React = require("react");
 var SearchForm = require("./search_form.js");
 // var GenerateMap = require("./map.js");
 var axios = require("axios");
-var Yelp = require('yelp');
-var yelp = new Yelp({
-  consumer_key: '8diW2VQILthhblqdNkbxDA',
-  consumer_secret: 'O5Mo5MOmO-3Uv1XdrmjCtOjisrY',
-  token: 'gfAGusgz1nnOIXYd65steP1ZpL5Hsnm4',
-  token_secret: 'p4TCKLJeeoGBo4cej7M_iw4l2CU',
-});
 
 var Main = React.createClass({
     startLoading() {
@@ -23,18 +16,18 @@ var Main = React.createClass({
         });
     },
     searchCity(searchObj) {
-        this.startLoading();
-        axios.get("/search", searchObj, function (req, res) {
-            yelp.search({ term: 'attractions', location: "chicago" })
-                .then(function (data) {
+        // this.startLoading();
+        axios.get("/search",searchObj) 
+            // yelp.search({ term: 'attractions', location: "chicago" })
+                .then(function() {
                     //return all the data (will need to adjust to display id, location)
-                    res.json(data.businesses);
+                    // res.json(data.businesses);
                 })
                 .catch(function (err) {
-                    this.endLoading();
+                    // this.endLoading();
                     console.error(err); 
                 });
-        })
+        // })
     },
 
     // Setting Initial State
