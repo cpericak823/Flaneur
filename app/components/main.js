@@ -19,10 +19,7 @@ var Main = React.createClass({
     searchCity(location) {
         this.startLoading();
         axios.post("/search",location) 
-            // yelp.search({ term: 'attractions', location: "chicago" })
                 .then(function() {
-                    //return all the data (will need to adjust to display id, location)
-                    // res.json(data.businesses);
                 })
                 .catch(function (err) {
                     this.endLoading();
