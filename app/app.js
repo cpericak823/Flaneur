@@ -6,6 +6,6 @@ var Main = require("./components/main.js")
 
 
 var routes = require("./config/frontend_routes.js");
-var where = document.getElementById("app")
+var where = document.getElementById("app");
 
 ReactDOM.render(routes, where);
