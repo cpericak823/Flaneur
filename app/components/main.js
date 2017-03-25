@@ -59,5 +59,7 @@ var Main = React.createClass({
             </div>
         )
     }
+    
 });
+
 module.exports = Main;
