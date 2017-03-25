@@ -1,7 +1,9 @@
 var React = require("react");
 
 var GenerateMap = React.createClass({
+
     render: function () {
+        console.log("map component render");
         return (
             <div>
                 <div id="map"></div>

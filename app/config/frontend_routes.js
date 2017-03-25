@@ -36,6 +36,7 @@ module.exports = (
     <Route path="/" component={Main}>
       <Route path="map" component={GenerateMap} />
       <Route path="search" component={SearchForm} />
+      {/*<Route path="attractions" component={AttractionsList} />*/}
       {/* list the path to show the appropriate component */}
       {/*<Route path="attractions" component={AttractionsList} />
       <Route path="myattractions" component={SelectedAttractions} />

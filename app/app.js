@@ -7,5 +7,6 @@ var Main = require("./components/main.js")
 
 var routes = require("./config/frontend_routes.js");
 var where = document.getElementById("app");
+// var drag = document.getElementById('examples');
 
 ReactDOM.render(routes, where);
