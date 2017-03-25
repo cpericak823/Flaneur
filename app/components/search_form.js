@@ -1,5 +1,4 @@
 var React = require("react");
-// var Antd = require("antd");
 var Button = require('antd/lib/button');
 var Select = require('antd/lib/select');
 var Option = Select.Option;
@@ -11,6 +10,7 @@ var SearchForm = React.createClass({
   handleSubmit(event) {
     event.preventDefault();
     this.props.submitAction(this.state);
+    console.log(this.state);
   },
 
   handleUpdateTextInput(event) {

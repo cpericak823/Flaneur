@@ -2,8 +2,6 @@ var express = require("express");
 var path = require("path");
 var Yelp = require('yelp');
 var schema = require("../models/schema.js");
-//will eventually change this to user input
-var location = "chicago";
 
 var yelp = new Yelp({
     consumer_key: '8diW2VQILthhblqdNkbxDA',
@@ -15,7 +13,7 @@ var yelp = new Yelp({
 module.exports = function (app) {
 
     app.post("/search", function (req, res) {
-        yelp.search({ term: 'attractions', location: location })
+        yelp.search({ term: 'attractions', location: req.body.city })
             .then(function (data) {
                 //return all the data (will need to adjust to display id, location)
                 var attractions = data.businesses.map(function (business) {
