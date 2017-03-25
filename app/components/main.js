@@ -1,6 +1,6 @@
 var React = require("react");
 var SearchForm = require("./search_form.js");
-// var GenerateMap = require("./map.js");
+var GenerateMap = require("./map.js");
 // var AttractionsList = require("./attractions_list.js");
 var axios = require("axios");
 
@@ -53,6 +53,7 @@ var Main = React.createClass({
                         submitAction={(location) => this.searchCity(location)}
                         defaultCity={'Chicago'}
                     />
+                    <GenerateMap />
                     {/*<AttractionsList />*/}
                     {/*{this.props.children}*/}
                 </div>
