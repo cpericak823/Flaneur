@@ -10,7 +10,6 @@ var SearchForm = React.createClass({
   handleSubmit(event) {
     event.preventDefault();
     this.props.submitAction(this.state);
-    console.log(this.state);
   },
 
   handleUpdateTextInput(event) {

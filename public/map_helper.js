@@ -1,6 +1,5 @@
 
 function initMap() {
-    console.log("initmap called");
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -31,7 +30,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         destination: document.getElementById('end').value,
         waypoints: waypts,
         optimizeWaypoints: true,
-        travelMode: 'DRIVING'
+        travelMode: 'WALKING'
     }, function (response, status) {
         if (status === 'OK') {
             directionsDisplay.setDirections(response);

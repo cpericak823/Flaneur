@@ -17,22 +17,26 @@ var Main = React.createClass({
         });
     },
     searchCity(location) {
+
         this.startLoading();
         axios.post("/search",location) 
-                .then(function() {
-                })
+                .then(function(res) {
+                    this.setState({
+                        attractions:res.data.attractions
+                    })
+                }.bind(this))
                 .catch(function (err) {
                     this.endLoading();
                     console.error(err); 
-                });
-        // })
+                }.bind(this));
     },
 
     // Setting Initial State
 
     initializeState() {
         this.setState({
-            loading: false
+            loading: false,
+            attractions: []
         });
     },
 
@@ -53,7 +57,9 @@ var Main = React.createClass({
                         submitAction={(location) => this.searchCity(location)}
                         defaultCity={'Chicago'}
                     />
-                    <GenerateMap />
+                    <GenerateMap 
+                    attractions = {this.state.attractions}
+                    />
                     {/*<AttractionsList />*/}
                     {/*{this.props.children}*/}
                 </div>
