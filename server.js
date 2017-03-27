@@ -2,6 +2,11 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+var cookieParser = require('cookie-parser');
+var session = require('cookie-session');
+var passport = require('passport');
+var mongoose = require('mongoose');
+var LocalStrategy = require('passport-local').Strategy;
 
 // Initialize Express
 var app = express();
@@ -12,16 +17,31 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(cookieParser());
+app.use(session({keys: ['./secretKey']}));
 
 // Static directory
-app.use(express.static(path.join(__dirname, 'public')));
 
 //Require external files
 // require("./app/components/utils/helper.js");
-require("./routes/api_routes.js")(app);
 
 //Require db connection
 var db = require("./controller/connection.js");
+
+var Account = require('./models/account');
+passport.use(new LocalStrategy(Account.authenticate()));
+passport.serializeUser(Account.serializeUser());
+passport.deserializeUser(Account.deserializeUser());
+
+app.use(express.static(path.join(__dirname, 'public')));
+require("./routes/api_routes.js")(app);
+
+var login = require('./routes/login-routes');
+app.use('/', login);
+// Require app.js for passport login
+// var app = require('./app.js');
 
 // Set the app to listen on port 3000
 app.listen(3000, function() {
