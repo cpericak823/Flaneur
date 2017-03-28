@@ -32,6 +32,7 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-router": "^2.4.1",
+    "sendmail": "^1.1.1",
     "yelp": "^1.0.2"
   },
   "devDependencies": {
@@ -53,7 +54,7 @@
     "zuul": "^3.11.1",
     "css-loader": "^0.27.3",
     "style-loader": "^0.14.1",
-     "browserify": "11.0.0",
+    "browserify": "11.0.0",
     "clean-css": "3.3.7",
     "jshint": "2.8.0",
     "jshint-stylish": "2.0.1",
