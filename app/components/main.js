@@ -60,8 +60,8 @@ var Main = React.createClass({
                     <GenerateMap 
                     attractions = {this.state.attractions}
                     />
-                    {/*<AttractionsList />*/}
-                    {/*{this.props.children}*/}
+                    
+                    {this.props.children}
                 </div>
             </div>
         )
