@@ -21,10 +21,10 @@ var IndexRoute = router.IndexRoute;
 
 // Reference the high-level components
 var SearchForm = require("../components/search_form.js");
-var AttractionsList = require("../components/attractions_list.js");
-var SelectedAttractions = require("../components/selected_attractions.js");
+// var AttractionsList = require("../components/attractions_list.js");
+// var SelectedAttractions = require("../components/selected_attractions.js");
 var GenerateMap = require("../components/map.js");
-var Login = require("../components/login.js");
+var Login = require("../components/login/Login.js");
 var Main = require("../components/main.js");
 
 
@@ -32,20 +32,12 @@ var Main = require("../components/main.js");
 module.exports = (
 
   // The high level component is the Router component
-  <Router history={hashHistory}>
-    <Route path="/" component={Main}>
+  <Router history={hashHistory}>    
+    <Route path="/" component={Main} >      
       <Route path="map" component={GenerateMap} />
-      <Route path="search" component={SearchForm} />
-      {/*<Route path="attractions" component={AttractionsList} />*/}
-      {/* list the path to show the appropriate component */}
-      {/*<Route path="attractions" component={AttractionsList} />
-      <Route path="myattractions" component={SelectedAttractions} />
-      
-
-      {/* If user selects any other path... we get the Info Route */}
-      <IndexRoute component={Main} />
-
-    </Route>
+      <Route path="search" component={SearchForm} /> 
+    </Route>     
+    <Route path="login" component={Login} />
   </Router>
 
 );

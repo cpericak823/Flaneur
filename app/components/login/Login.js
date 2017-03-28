@@ -19,7 +19,7 @@ class Login extends React.Component{
   }
 
   redirectToMain() {
-    this.context.router.push('../Main');
+    this.context.router.push('/');
   }
 
   sendSuccessNotification() {
@@ -39,7 +39,7 @@ class Login extends React.Component{
   handleSubmit(event) {
     event.preventDefault();
     console.log(this.state)    
-    axios.post('./login', this.state)
+    axios.post('/login', this.state)
         .then(() => {
         this.sendSuccessNotification();
         this.endLoading();
