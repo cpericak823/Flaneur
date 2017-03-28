@@ -18,7 +18,7 @@ class Login extends React.Component{
     });
   }
 
-  redirectToMain() {
+  redirectToHome() {
     this.context.router.push('/');
   }
 
@@ -43,7 +43,7 @@ class Login extends React.Component{
         .then(() => {
         this.sendSuccessNotification();
         this.endLoading();
-        this.redirectToMain();
+        this.redirectToHome();
         console.log(event);
       })
       .catch((error) => {

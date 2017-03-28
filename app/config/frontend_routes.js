@@ -29,10 +29,8 @@ module.exports = (
   // The high level component is the Router component
   <Router history={hashHistory}>    
     <Route path="/" component={Main} >      
-	  <Route path="login" component={Login} />
+	  <Route path="login" component={Login.Login} />
 	  <Route path="home" component={Home} />
-      // <Route path="map" component={GenerateMap} />
-      // <Route path="search" component={SearchForm} /> 
     </Route>         
   </Router>
 
