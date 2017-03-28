@@ -1,4 +1,3 @@
-//use react_router
 // Include the React library
 var React = require("react");
 
@@ -9,11 +8,9 @@ var router = require("react-router");
 var Route = router.Route;
 
 // Include the Router component to contain all our Routes
-// Here where we can pass in some configuration as props
 var Router = router.Router;
 
 // Include the hashHistory prop to handle routing client side without a server
-// https://github.com/ReactTraining/react-router/blob/master/docs/guides/Histories.md#hashhistory
 var hashHistory = router.hashHistory;
 
 // Include the IndexRoute (catch-all route)
@@ -21,12 +18,10 @@ var IndexRoute = router.IndexRoute;
 
 // Reference the high-level components
 var SearchForm = require("../components/search_form.js");
-// var AttractionsList = require("../components/attractions_list.js");
-// var SelectedAttractions = require("../components/selected_attractions.js");
 var GenerateMap = require("../components/map.js");
-import { Login } from "../components/login/Login.js";
+var Login = require ("../components/login/Login.js");
 var Main = require("../components/main.js");
-
+var Home = require("../components/home.js");
 
 // Export the Routes
 module.exports = (
@@ -35,8 +30,9 @@ module.exports = (
   <Router history={hashHistory}>    
     <Route path="/" component={Main} >      
 	  <Route path="login" component={Login} />
-      <Route path="map" component={GenerateMap} />
-      <Route path="search" component={SearchForm} /> 
+	  <Route path="home" component={Home} />
+      // <Route path="map" component={GenerateMap} />
+      // <Route path="search" component={SearchForm} /> 
     </Route>         
   </Router>
 
