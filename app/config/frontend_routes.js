@@ -24,7 +24,7 @@ var SearchForm = require("../components/search_form.js");
 // var AttractionsList = require("../components/attractions_list.js");
 // var SelectedAttractions = require("../components/selected_attractions.js");
 var GenerateMap = require("../components/map.js");
-var Login = require("../components/login/Login.js");
+import { Login } from "../components/login/Login.js";
 var Main = require("../components/main.js");
 
 
@@ -34,10 +34,10 @@ module.exports = (
   // The high level component is the Router component
   <Router history={hashHistory}>    
     <Route path="/" component={Main} >      
+	  <Route path="login" component={Login} />
       <Route path="map" component={GenerateMap} />
       <Route path="search" component={SearchForm} /> 
-    </Route>     
-    <Route path="login" component={Login} />
+    </Route>         
   </Router>
 
 );
