@@ -1,16 +1,18 @@
 var React = require("react");
+var mapHelper = require('../../public/map_helper');
 
 var GenerateMap = React.createClass({
-    // componentDidMount (){
-    //     initMap();
-    // },
+    componentDidMount (){
+        window.initMap = mapHelper.initMap(this);
+        loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyDxABenYv94mikJFrSwiVV1cbB-lPRfH5I&callback=initMap')
+    }, 
     //on this.props.attractions, call map to create children
     render: function () {
         console.log(this.props.attractions);
-        // return this.props.attractions.map(function (attractions, index) {
+       
             return (
                 <div>
-                    <div id="map"></div>
+                    <div id="map" ref="map"></div>
                     <div id="right-panel">
                         <div>
                             <b>Start:</b>
@@ -43,7 +45,16 @@ var GenerateMap = React.createClass({
 
                 </div>
             )
-        // }.bind(this));
+        
     }
-});
+}); 
+
+function loadJS(src) {
+    var ref = window.document.getElementsByTagName("script")[0];
+    var script = window.document.createElement("script");
+    script.src = src;
+    script.async = true;
+    ref.parentNode.insertBefore(script, ref);
+}
+
 module.exports = GenerateMap;
