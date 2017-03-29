@@ -32,7 +32,6 @@ module.exports = (
   <Router history={hashHistory}>    
     <Route path="/" component={Main} >      
 	  <Route path="login" component={Login.Login} />
-
 	  <Route path="register" component={Login.Register} />
 	  <Route path="home" component={Home} />
 	  <IndexRoute component={Login.Login} />

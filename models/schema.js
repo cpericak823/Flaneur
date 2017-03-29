@@ -9,11 +9,11 @@ var Schema = mongoose.Schema;
 // Instantiate a new Schema with a title and link documents
 
 var YelpApi = new Schema({
-    city: {
-        type: String,
-        trim: true,
-        required: "Name is Required"
-    }, 
+    // city: {
+    //     type: String,
+    //     trim: true,
+    //     required: "Name is Required"
+    // }, 
     attractions: [{
         name: String,
         latitude: Number,
@@ -23,7 +23,7 @@ var YelpApi = new Schema({
 });
 // Account.plugin(passportLocalMongoose);
 // This creates our model from the above schema, using mongoose's model method
-var Account = mongoose.model("Account", Account);
+var YelpData = mongoose.model("Article", YelpApi);
 
 // Finally, we export the module, allowing server.js to hook into it with a require statement
-module.exports = Account;
+module.exports = YelpData;
