@@ -13,7 +13,7 @@
 
 
 var passport = require('passport');
-var Account = require('../models/account');
+var Account = require('../models/schema.js');
 var router = require('express').Router();
 
 // router.get('/', function(req, res) {
