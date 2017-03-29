@@ -24,9 +24,6 @@ app.use(session({keys: ['./secretKey']}));
 
 // Static directory
 
-//Require external files
-// require("./app/components/utils/helper.js");
-
 //Require db connection
 var db = require("./controller/connection.js");
 
@@ -40,8 +37,7 @@ require("./routes/api_routes.js")(app);
 
 var login = require('./routes/login-routes');
 app.use('/', login);
-// Require app.js for passport login
-// var app = require('./app.js');
+
 
 // Set the app to listen on port 3000
 app.listen(3000, function() {

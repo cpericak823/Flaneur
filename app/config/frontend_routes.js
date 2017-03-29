@@ -10,7 +10,10 @@ var Route = router.Route;
 // Include the Router component to contain all our Routes
 var Router = router.Router;
 
+<<<<<<< HEAD
+=======
 // Include the hashHistory prop to handle routing client side without a server
+>>>>>>> master
 var hashHistory = router.hashHistory;
 
 // Include the IndexRoute (catch-all route)
@@ -27,6 +30,7 @@ var Home = require("../components/home.js");
 module.exports = (
 
   // The high level component is the Router component
+
   <Router history={hashHistory}>    
     <Route path="/" component={Main} >      
 	  <Route path="login" component={Login.Login} />
