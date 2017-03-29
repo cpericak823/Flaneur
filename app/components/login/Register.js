@@ -2,6 +2,8 @@ import * as React from 'react';
 import * as axios from 'axios';
 import { Select, Button, notification } from 'antd';
 import { Layout } from './Layout';
+import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
+import { Home } from '../home';
 
 class Register extends React.Component {
   startLoading() {
@@ -16,8 +18,8 @@ class Register extends React.Component {
     });
   }
 
-  redirectToRegister() {
-    this.context.router.push('register');
+  redirectToHome() {
+    this.context.router.push('home');
   }
 
   sendSuccessNotification() {
@@ -44,7 +46,7 @@ class Register extends React.Component {
       .then(() => {
         this.sendSuccessNotification();
         this.endLoading();
-        this.redirectToRegister();
+        this.redirectToHome();
         console.log(registerObj);
       })
       .catch((error) => {
@@ -83,7 +85,7 @@ class Register extends React.Component {
         </h2>
         <form onSubmit={(registerObj) => this.createUser()}>
           <div className='form-row'>
-            <label htmlFor='Username'>Username</label><br/>
+            <label htmlFor='username'>Username</label><br/>
             <input 
               value={this.state.username}
               type='text'

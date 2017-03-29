@@ -2,8 +2,9 @@ import * as React from 'react';
 import * as axios from 'axios';
 import { Select, Button, notification } from 'antd';
 import { Layout } from './Layout';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-
+import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
+import { Home } from '../home';
+import { Register } from './Register';
 
 class Login extends React.Component{
     startLoading() {
@@ -19,7 +20,11 @@ class Login extends React.Component{
   }
 
   redirectToHome() {
-    this.context.router.push('/');
+    this.context.router.push('home');
+  }
+
+  redirectToRegister() {
+    this.context.router.push('register');
   }
 
   sendSuccessNotification() {
@@ -32,12 +37,12 @@ class Login extends React.Component{
   sendErrorNotification() {
     notification['error']({
       message: 'Uh-Oh',
-      description: 'Error logging in. Try again',
+      description: 'Account not found. Please register.',
     });
   }
 
   handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault(); 
     console.log(this.state)    
     axios.post('/login', this.state)
         .then(() => {
@@ -48,8 +53,9 @@ class Login extends React.Component{
       })
       .catch((error) => {
         this.sendErrorNotification();
+        this.redirectToRegister();
         this.endLoading();
-        console.log(error);
+        // console.log(error);
       });   
   }  
 
@@ -110,5 +116,8 @@ class Login extends React.Component{
   }
 }
 
+Login.contextTypes = {
+  router: React.PropTypes.any
+};
 
 export { Login };
