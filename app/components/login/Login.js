@@ -3,7 +3,12 @@ import * as axios from 'axios';
 import { Select, Button, notification } from 'antd';
 import { Layout } from './Layout';
 import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
+<<<<<<< HEAD
 
+=======
+import { Home } from '../home';
+import { Register } from './Register';
+>>>>>>> fca97299ae643744400c50284ae0796179ef6aa2
 
 class Login extends React.Component{
     startLoading() {
@@ -21,7 +26,12 @@ class Login extends React.Component{
   redirectToHome() {
     this.context.router.push('home');
   }
+<<<<<<< HEAD
  redirectToRegister() {
+=======
+
+  redirectToRegister() {
+>>>>>>> fca97299ae643744400c50284ae0796179ef6aa2
     this.context.router.push('register');
   }
   sendSuccessNotification() {
@@ -34,14 +44,19 @@ class Login extends React.Component{
   sendErrorNotification() {
     notification['error']({
       message: 'Uh-Oh',
-      description: 'Error logging in. Try again',
+      description: 'Account not found. Please register.',
     });
   }
 
   handleSubmit(event) {
+<<<<<<< HEAD
     event.preventDefault();
     console.log(this.state)
     // if (/*check is user is already in db*/){    
+=======
+    event.preventDefault(); 
+    console.log(this.state)    
+>>>>>>> fca97299ae643744400c50284ae0796179ef6aa2
     axios.post('/login', this.state)
         .then(() => {
         this.sendSuccessNotification();
@@ -51,12 +66,18 @@ class Login extends React.Component{
       })
       .catch((error) => {
         this.sendErrorNotification();
+        this.redirectToRegister();
         this.endLoading();
+<<<<<<< HEAD
         console.log(error);
       }) 
     // }  else{
     //   this.redirectToRegister();
     // }
+=======
+        // console.log(error);
+      });   
+>>>>>>> fca97299ae643744400c50284ae0796179ef6aa2
   }  
 
   handleUpdateTextInput(event) {
@@ -120,5 +141,12 @@ class Login extends React.Component{
 Login.contextTypes = {
   router: React.PropTypes.any
 }
+<<<<<<< HEAD
+=======
+
+Login.contextTypes = {
+  router: React.PropTypes.any
+};
+>>>>>>> fca97299ae643744400c50284ae0796179ef6aa2
 
 export { Login };
