@@ -43,14 +43,9 @@ class Login extends React.Component{
   }
 
   handleSubmit(event) {
-<<<<<<< HEAD
     event.preventDefault();
     console.log(this.state)
     // if (/*check is user is already in db*/){    
-=======
-    event.preventDefault(); 
-    console.log(this.state)    
->>>>>>> fca97299ae643744400c50284ae0796179ef6aa2
     axios.post('/login', this.state)
         .then(() => {
         this.sendSuccessNotification();
@@ -62,16 +57,14 @@ class Login extends React.Component{
         this.sendErrorNotification();
         this.redirectToRegister();
         this.endLoading();
-<<<<<<< HEAD
         console.log(error);
       }) 
     // }  else{
     //   this.redirectToRegister();
     // }
-=======
+
         // console.log(error);
-      });   
->>>>>>> fca97299ae643744400c50284ae0796179ef6aa2
+      // });   
   }  
 
   handleUpdateTextInput(event) {
@@ -135,12 +128,6 @@ class Login extends React.Component{
 Login.contextTypes = {
   router: React.PropTypes.any
 }
-<<<<<<< HEAD
-=======
 
-Login.contextTypes = {
-  router: React.PropTypes.any
-};
->>>>>>> fca97299ae643744400c50284ae0796179ef6aa2
 
 export { Login };
