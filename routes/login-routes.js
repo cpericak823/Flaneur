@@ -9,9 +9,6 @@
 //   </Router>
 // );
 
-
-
-
 var passport = require('passport');
 var Account = require('../models/schema.js');
 var router = require('express').Router();
