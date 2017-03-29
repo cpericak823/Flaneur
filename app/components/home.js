@@ -18,16 +18,16 @@ var Home = React.createClass({
     searchCity(location) {
 
         this.startLoading();
-        axios.post("/search",location) 
-                .then(function(res) {
-                    this.setState({
-                        attractions:res.data.attractions
-                    })
-                }.bind(this))
-                .catch(function (err) {
-                    this.endLoading();
-                    console.error(err); 
-                }.bind(this));
+        axios.post("/search", location)
+            .then(function (res) {
+                this.setState({
+                    attractions: res.data.attractions
+                })
+            }.bind(this))
+            .catch(function (err) {
+                this.endLoading();
+                console.error(err);
+            }.bind(this));
     },
 
     // Setting Initial State
@@ -48,23 +48,20 @@ var Home = React.createClass({
     render: function () {
         return (
             <div>
-
                 <div className="main-content">
-                    <h2>Search for a City</h2>
                     <SearchForm
                         loading={this.state.loading}
                         submitAction={(location) => this.searchCity(location)}
                         defaultCity={'Chicago'}
                     />
-                    <GenerateMap 
-                    attractions = {this.state.attractions}
+                    <GenerateMap
+                        attractions={this.state.attractions}
                     />
-                    
                 </div>
             </div>
         )
     }
-    
+
 });
 
 module.exports = Home;

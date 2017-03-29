@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as axios from 'axios';
 import { Select, Button, notification } from 'antd';
 import { Layout } from './Layout';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
 
 
 class Login extends React.Component{
@@ -19,9 +19,11 @@ class Login extends React.Component{
   }
 
   redirectToHome() {
-    this.context.router.push('/');
+    this.context.router.push('home');
   }
-
+ redirectToRegister() {
+    this.context.router.push('register');
+  }
   sendSuccessNotification() {
     notification['success']({
       message: 'Great!',
@@ -38,7 +40,8 @@ class Login extends React.Component{
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state)    
+    console.log(this.state)
+    // if (/*check is user is already in db*/){    
     axios.post('/login', this.state)
         .then(() => {
         this.sendSuccessNotification();
@@ -50,7 +53,10 @@ class Login extends React.Component{
         this.sendErrorNotification();
         this.endLoading();
         console.log(error);
-      });   
+      }) 
+    // }  else{
+    //   this.redirectToRegister();
+    // }
   }  
 
   handleUpdateTextInput(event) {
@@ -107,8 +113,12 @@ class Login extends React.Component{
         </form>
       </div>
     )
+    
   }
+  
 }
-
+Login.contextTypes = {
+  router: React.PropTypes.any
+}
 
 export { Login };

@@ -7,16 +7,12 @@ var Schema = mongoose.Schema;
   passportLocalMongoose = require('passport-local-mongoose');
 
 // Instantiate a new Schema with a title and link documents
-var Account = new Schema({
-    username: {
+
+var YelpApi = new Schema({
+    city: {
         type: String,
         trim: true,
-        required: "Username is Required"
-    },
-    password: {
-        type: String,
-        trim: true,
-        required: "Password is Required"
+        required: "Name is Required"
     }, 
     attractions: [{
         name: String,

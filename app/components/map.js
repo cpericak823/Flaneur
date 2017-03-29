@@ -6,7 +6,6 @@ var GenerateMap = React.createClass({
         window.initMap = mapHelper.initMap(this);
         loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyDxABenYv94mikJFrSwiVV1cbB-lPRfH5I&callback=initMap')
     }, 
-    //on this.props.attractions, call map to create children
     render: function () {
         console.log(this.props.attractions);
        

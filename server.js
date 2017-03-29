@@ -34,6 +34,7 @@ passport.deserializeUser(Account.deserializeUser());
 
 app.use(express.static(path.join(__dirname, 'public')));
 require("./routes/api_routes.js")(app);
+var nodemailer = require("./controller/nodemailer.js");
 
 var login = require('./routes/login-routes');
 app.use('/', login);

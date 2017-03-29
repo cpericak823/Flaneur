@@ -25,6 +25,7 @@ var GenerateMap = require("../components/map.js");
 var Login = require ("../components/login/Login.js");
 var Main = require("../components/main.js");
 var Home = require("../components/home.js");
+var Register= require ("../components/login/Register.js");
 
 // Export the Routes
 module.exports = (
@@ -34,7 +35,9 @@ module.exports = (
   <Router history={hashHistory}>    
     <Route path="/" component={Main} >      
 	  <Route path="login" component={Login.Login} />
+    <Route path="register" component={Login.Register} />
 	  <Route path="home" component={Home} />
+     <IndexRoute component={Login.Login} />
     </Route>         
   </Router>
 
