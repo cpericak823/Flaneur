@@ -4,7 +4,7 @@ var db = require("../controller/connection.js");
 
 // Create the Schema class
 var Schema = mongoose.Schema;
-  passportLocalMongoose = require('passport-local-mongoose');
+//   passportLocalMongoose = require('passport-local-mongoose');
 
 // Instantiate a new Schema with a title and link documents
 
@@ -21,7 +21,7 @@ var YelpApi = new Schema({
         imageurl: String
     }]
 });
-Account.plugin(passportLocalMongoose);
+// Account.plugin(passportLocalMongoose);
 // This creates our model from the above schema, using mongoose's model method
 var Account = mongoose.model("Account", Account);
 
