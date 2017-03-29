@@ -3,12 +3,9 @@ import * as axios from 'axios';
 import { Select, Button, notification } from 'antd';
 import { Layout } from './Layout';
 import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
-<<<<<<< HEAD
-
-=======
 import { Home } from '../home';
 import { Register } from './Register';
->>>>>>> fca97299ae643744400c50284ae0796179ef6aa2
+
 
 class Login extends React.Component{
     startLoading() {
