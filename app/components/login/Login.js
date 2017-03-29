@@ -26,12 +26,9 @@ class Login extends React.Component{
   redirectToHome() {
     this.context.router.push('home');
   }
-<<<<<<< HEAD
- redirectToRegister() {
-=======
 
   redirectToRegister() {
->>>>>>> fca97299ae643744400c50284ae0796179ef6aa2
+
     this.context.router.push('register');
   }
   sendSuccessNotification() {
