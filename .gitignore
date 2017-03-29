@@ -1,4 +1,5 @@
 node_modules
 helper.js
 npm-debug.log
-bin
+bin/
+.DS_Store

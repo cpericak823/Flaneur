@@ -7,16 +7,11 @@ var Schema = mongoose.Schema;
 
 // Instantiate a new Schema with a title and link documents
 var YelpApi = new Schema({
-    // username: {
-    //     type: String,
-    //     trim: true,
-    //     required: "Username is Required"
-    // },
-    // city: {
-    //     type: String,
-    //     trim: true,
-    //     required: "Name is Required"
-    // }, 
+    city: {
+        type: String,
+        trim: true,
+        required: "Name is Required"
+    }, 
     attractions: [{
         name: String,
         latitude: Number,

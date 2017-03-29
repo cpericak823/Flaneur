@@ -33,7 +33,9 @@ module.exports = function (app) {
                     } else {
                       res.json(newmodel);
                 }
-                });
+                }.then(function(){
+                    
+                }));
             })
             .catch(function (err) {
                 console.error(err);
