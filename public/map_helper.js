@@ -43,16 +43,16 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         if (status === 'OK') {
             directionsDisplay.setDirections(response);
             var route = response.routes[0];
+            console.log(route);
             var summaryPanel = document.getElementById('directions-panel');
             summaryPanel.innerHTML = '';
             // For each route, display summary information.
             for (var i = 0; i < route.legs.length; i++) {
                 var routeSegment = i + 1;
-                summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment +
-                    '</b><br>';
-                summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
-                summaryPanel.innerHTML += route.legs[i].end_address + '<br />';
-                summaryPanel.innerHTML += route.legs[i].distance.text + '<br /><br />';
+                summaryPanel.innerHTML += '<b>Segment ' +routeSegment+ ' to: </b>'+ route.legs[i].end_address + '<br /><br />';
+                summaryPanel.innerHTML += '<b>Directions: </b> Start at: ' + route.legs[i].start_address + '<br /><br />'+ route.legs[i].steps[i].instructions + '<br /><br />';
+                summaryPanel.innerHTML += '<b>End At: </b>' + route.legs[i].end_address + '<br />'
+                summaryPanel.innerHTML += '<b><em>Total Distance: </b>' + route.legs[i].distance.text + '</em><br /><br /><hr />';
             }
         } else {
             window.alert('Directions request failed due to ' + status);
