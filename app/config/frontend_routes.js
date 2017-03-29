@@ -23,6 +23,7 @@ var IndexRoute = router.IndexRoute;
 var SearchForm = require("../components/search_form.js");
 var GenerateMap = require("../components/map.js");
 var Login = require ("../components/login/Login.js");
+var Register = require ("../components/login/Register.js");
 var Main = require("../components/main.js");
 var Home = require("../components/home.js");
 var Register= require ("../components/login/Register.js");
@@ -35,9 +36,10 @@ module.exports = (
   <Router history={hashHistory}>    
     <Route path="/" component={Main} >      
 	  <Route path="login" component={Login.Login} />
-    <Route path="register" component={Login.Register} />
+
+	  <Route path="register" component={Login.Register} />
 	  <Route path="home" component={Home} />
-     <IndexRoute component={Login.Login} />
+	  <IndexRoute component={Login.Login} />
     </Route>         
   </Router>
 
