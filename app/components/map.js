@@ -17,7 +17,7 @@ var GenerateMap = React.createClass({
                     <Col xs={12} md={6}>
                         <div id="map" ref="map"></div>
                     </Col>
-                    <Col xs={6} md={3}>
+                    <Col xs={6} md={2}>
                         <div id="right-panel">
                             <div>
                                 <b>Start:</b>
@@ -47,7 +47,7 @@ var GenerateMap = React.createClass({
                             </div>
                         </div>
                     </Col>
-                    <Col xs={6} md={3}>
+                    <Col xs={6} md={4}>
                         <div id="directions-panel"></div>
                     </Col>
                 </Row>
