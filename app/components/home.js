@@ -13,6 +13,7 @@ var Home = React.createClass({
     },
     logOut(){
         console.log('here');
+        
         axios.post('/logout').then(()=>{
             console.log(this.context);
             cookie.remove('userId');
