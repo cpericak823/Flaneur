@@ -38,7 +38,7 @@ var SearchForm = React.createClass({
   render: function () {
     return (
       <div>
-          <Navbar collapseOnSelect>
+          <Navbar collapseOnSelect id="navbar">
     <Navbar.Header>
       <Navbar.Brand>
         <img src="../../assets/images/walking-man-clipart-3.png" responsive />
@@ -47,19 +47,19 @@ var SearchForm = React.createClass({
     </Navbar.Header>
     <Navbar.Collapse>
       <Nav>
-        <NavItem eventKey={1}>Flaneur</NavItem>
+        <NavItem eventKey={1} id="navitem">Flaneur</NavItem>
       </Nav>
       <Nav pullRight>
           <Form inline onSubmit={(event) => this.handleSubmit(event)}>
             <FormGroup >
               {' '}
-                <FormControl      defaultValue={this.state.city}
+                <FormControl defaultValue={this.state.city}
                     type='text'
                     id='city'
                     onChange={(event) => this.handleUpdateTextInput(event)}/>
             </FormGroup>
              {' '}
-                <Button type='submit'
+                <Button bsStyle="info" type='submit'
                     htmlType='submit'
                     loading={this.props.loading}>Find Attractions
                 </Button>

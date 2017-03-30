@@ -52,7 +52,7 @@ var Home = React.createClass({
                     <SearchForm
                         loading={this.state.loading}
                         submitAction={(location) => this.searchCity(location)}
-                        defaultCity={'Chicago'}
+                        defaultCity={''}
                     />
                     <GenerateMap
                         attractions={this.state.attractions}
