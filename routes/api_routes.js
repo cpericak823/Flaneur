@@ -21,7 +21,8 @@ module.exports = function (app) {
                         name: business.name,
                         latitude: business.location.coordinate.latitude,
                         longitude: business.location.coordinate.longitude,
-                        imageurl: business.image_url
+                        imageurl: business.image_url,
+                        userId: req.user.id
                     }
                 })
               

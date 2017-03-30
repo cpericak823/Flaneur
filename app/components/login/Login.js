@@ -5,10 +5,14 @@ import { Layout } from './Layout';
 import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
 import { Home } from '../home';
 import { Register } from './Register';
-
+import cookie from 'react-cookie';
 
 class Login extends React.Component{
-    startLoading() {
+  setUserCookie(user) {
+    cookie.save('userId', user.id, { path: '/' });
+  }
+
+  startLoading() {
     this.setState({
       loading: true
     });
@@ -25,7 +29,6 @@ class Login extends React.Component{
   }
 
   redirectToRegister() {
-
     this.context.router.push('register');
   }
   sendSuccessNotification() {
@@ -44,12 +47,12 @@ class Login extends React.Component{
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state)
-    // if (/*check is user is already in db*/){    
+    console.log(this.state)   
     axios.post('/login', this.state)
-        .then(() => {
+        .then((user) => {
         this.sendSuccessNotification();
         this.endLoading();
+        this.setUserCookie(user);
         this.redirectToHome();
         console.log(event);
       })
@@ -59,12 +62,7 @@ class Login extends React.Component{
         this.endLoading();
         console.log(error);
       }) 
-    // }  else{
-    //   this.redirectToRegister();
-    // }
-
-        // console.log(error);
-      // });   
+ 
   }  
 
   handleUpdateTextInput(event) {

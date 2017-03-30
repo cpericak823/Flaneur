@@ -64,6 +64,7 @@ var SearchForm = React.createClass({
                     loading={this.props.loading}>Find Attractions
                 </Button>
           </Form>
+          <Button onClick={this.props.logout}>Log Out</Button>
       </Nav>
     </Navbar.Collapse>
   </Navbar>
