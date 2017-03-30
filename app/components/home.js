@@ -2,8 +2,26 @@ var React = require("react");
 var SearchForm = require("./search_form.js");
 var GenerateMap = require("./map.js");
 var axios = require("axios");
+import cookie from 'react-cookie';
 
 var Home = React.createClass({
+    isLoggedIn() {                
+        var validCookie = cookie.load('userId');
+        if (!validCookie) {
+          this.context.router.push('/');
+        }
+    },
+    logOut(){
+        console.log('here');
+        
+        axios.post('/logout').then(()=>{
+            console.log(this.context);
+            cookie.remove('userId');
+            this.context.router.push('/');
+        }).catch((error)=>{
+            console.log(error);
+        });
+    },
     startLoading() {
         this.setState({
             loading: true
@@ -41,15 +59,17 @@ var Home = React.createClass({
 
     // Lifecycle Methods
 
-    componentWillMount() {
+    componentWillMount() {        
         this.initializeState();
     },
 
     render: function () {
+        this.isLoggedIn();    
         return (
             <div>
                 <div className="main-content">
                     <SearchForm
+                        logout={this.logOut}
                         loading={this.state.loading}
                         submitAction={(location) => this.searchCity(location)}
                         defaultCity={''}
@@ -63,5 +83,9 @@ var Home = React.createClass({
     }
 
 });
+
+Home.contextTypes = {
+    router: React.PropTypes.any,
+};
 
 module.exports = Home;

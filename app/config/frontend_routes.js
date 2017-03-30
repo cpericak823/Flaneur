@@ -22,18 +22,16 @@ var Login = require ("../components/login/Login.js");
 var Register = require ("../components/login/Register.js");
 var Main = require("../components/main.js");
 var Home = require("../components/home.js");
-var Register= require ("../components/login/Register.js");
 
 // Export the Routes
 module.exports = (
-
   // The high level component is the Router component
 
   <Router history={hashHistory}>    
-    <Route path="/" component={Main} >      
+    <Route path="/" component={Main} >
 	  <Route path="login" component={Login.Login} />
-	  <Route path="register" component={Login.Register} />
-	  <Route path="home" component={Home} />
+	  <Route path="register" component={Register.Register} />
+	  <Route path="home" component={Home} />  
 	  <IndexRoute component={Login.Login} />
     </Route>         
   </Router>
