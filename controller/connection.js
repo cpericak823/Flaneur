@@ -3,7 +3,7 @@ var Promise = require("bluebird");
 mongoose.Promise = Promise;
 
 //Initialize Mongoose
-mongoose.connect('mongodb://flaneur2017:flaneur2017@ds149040.mlab.com:49040/heroku_jm72ng37');
+mongoose.connect('mongodb://heroku_j94dtntf:7h2m732ds8insilnbqpdjuosco@ds147900.mlab.com:47900/heroku_j94dtntf');
 // Save our mongoose connection to db
 var db = mongoose.connection;
 
