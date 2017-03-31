@@ -6,6 +6,9 @@ import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-ro
 import { Home } from '../home';
 import { Register } from './Register';
 import cookie from 'react-cookie';
+import { Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
+
 
 class Login extends React.Component{
   setUserCookie(user) {
@@ -85,12 +88,14 @@ class Login extends React.Component{
   render(){
     return(
       <div>
-        <h2>
+      <Row className='login-form'>
+      <Col xs={12} md={6}>
+        <h2 className='login-header'>
           Log In
         </h2>
         <form onSubmit= {(event) => this.handleSubmit(event)}>
-          <div className='form-row'>
-            <label htmlFor='Username'>Username</label><br/>
+          <div className='login-email'>
+            <label htmlFor='Username'>Email</label><br/>
             <input 
               defaultValue={this.state.username}
               type='text'
@@ -98,17 +103,18 @@ class Login extends React.Component{
               onChange={(event) => this.handleUpdateTextInput(event)}
             />
           </div>
-          <div className='form-row'>
+          <div className='login-password'>
               <label htmlFor='password'>Password</label><br/>
               <input 
                 defaultValue={this.state.password}
-                type="text"
+                type="password"
                 id='password'
                 onChange={(event) => this.handleUpdateTextInput(event)}
               />
           </div>
           <div className='form-row'>
-            <Button  
+            <Button 
+              id='loginButton' 
               type='primary'
               htmlType='submit'
               loading={this.props.loading}
@@ -117,6 +123,19 @@ class Login extends React.Component{
             </Button>
           </div>
         </form>
+        </Col>
+        </Row>
+        <Row className='redirect-Register'>
+        <Col xs={12} md={6}>
+          <Button 
+            id='redirectToRegisterButton' 
+            type='primary'
+            htmlType='submit'             
+          >
+            Register
+          </Button>
+          </Col>
+        </Row>
       </div>
     )
     

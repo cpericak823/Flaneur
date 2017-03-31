@@ -8,7 +8,7 @@ var Home = React.createClass({
     isLoggedIn() {                
         var validCookie = cookie.load('userId');
         if (!validCookie) {
-          this.context.router.push('/');
+          this.context.router.push('/register');
         }
     },
     logOut(){

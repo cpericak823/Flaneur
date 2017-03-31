@@ -1,3 +1,41 @@
+      /*Login Styling Begin*/
+      .login-form,
+      .register-button {
+        margin-left: 20px
+      }
+
+      .login-header, 
+      .register-header {
+        font-family: 'Raleway Dots', cursive;
+        font-size: 50px;
+        color: darkblue;
+      }
+
+      #email, 
+      #password {
+        font-family: 'Roboto','sans-serif';
+        font-size: 15px
+        padding-bottom: 10px;
+      }
+
+      #loginButton,
+      #redirectToRegisterButton, 
+      #registerButton {
+        font-family: 'Roboto','sans-serif';
+        background-color: rgb(137,206,233);
+        border-radius: 4px;
+        color: white;
+        font-size: 15px;
+        padding: 5px 12px;
+        margin-top: 10px;
+        border: .5px solid rgb(137,206,233);
+      }
+
+      #redirectToRegisterButton {
+        margin-left: 35px;
+      }
+
+      /*End Login Styling*/
 
       #right-panel {
         font-family: 'Roboto','sans-serif';

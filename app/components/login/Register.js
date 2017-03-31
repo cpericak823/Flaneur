@@ -4,6 +4,8 @@ import { Select, Button, notification } from 'antd';
 import { Layout } from './Layout';
 import { Router, Route, IndexRoute, hashHistory, browserHistory } from 'react-router';
 import { Home } from '../home';
+import { Col } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 
 class Register extends React.Component {
   startLoading() {
@@ -80,12 +82,13 @@ class Register extends React.Component {
   render(){
     return (
       <div>
-        <h2>
+      <Col xs={12} md={6}>
+        <h2 className='register-header'>
           Register
         </h2>
         <form onSubmit={(registerObj) => this.createUser()}>
-          <div className='form-row'>
-            <label htmlFor='username'>Username</label><br/>
+          <div className='register-email'>
+            <label htmlFor='username'>Email</label><br/>
             <input 
               value={this.state.username}
               type='text'
@@ -93,17 +96,18 @@ class Register extends React.Component {
               onChange={(e) => this.handleChange(e)}
             />
           </div>
-          <div className='form-row'>
+          <div className='register-email'>
               <label htmlFor='password'>Password</label><br/>
               <input 
                 value={this.state.password}
-                type="text"
+                type="password"
                 id='password'
                 onChange={(e) => this.handleChange(e)}
               />
           </div>
           <div className='form-row'>
-            <Button  
+            <Button
+              id='registerButton'  
               type='primary'
               htmlType='submit'
               loading={this.props.loading}
@@ -112,6 +116,7 @@ class Register extends React.Component {
             </Button>
           </div>
         </form>
+        </Col>
      </div>
     )
   }
