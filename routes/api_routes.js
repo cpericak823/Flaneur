@@ -15,14 +15,14 @@ module.exports = function (app) {
     app.post("/search", function (req, res) {
         yelp.search({ term: 'attractions', location: req.body.city })
             .then(function (data) {
-                //return all the data (will need to adjust to display id, location)
                 var attractions = data.businesses.map(function (business) {
                     return {
+                        
                         name: business.name,
                         latitude: business.location.coordinate.latitude,
                         longitude: business.location.coordinate.longitude,
                         imageurl: business.image_url,
-                        userId: req.user.id
+                        // userId: req.user.id
                     }
                 })
               
