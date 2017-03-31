@@ -48,6 +48,7 @@
         width: 100%;
         font-size: 15px;
         color: rgb(251, 17, 19);
+        text-align: center;
       }
       .navbar-default{
         background-color: transparent;
@@ -61,4 +62,11 @@
 #navitem{
    font-size: 50px;
    color: darkblue;
+}
+#form{
+   margin-left: 250px;
+   margin-top: 10px;
+}
+#logout{
+  margin-top: 10px;
 }

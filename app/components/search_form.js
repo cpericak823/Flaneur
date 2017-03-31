@@ -12,8 +12,6 @@ var Col = require("react-bootstrap/lib").Col;
 var Row = require("react-bootstrap/lib").Row;
 
 var SearchForm = React.createClass({
-  // Form Event Handlers
-
   handleSubmit(event) {
     event.preventDefault();
     this.props.submitAction(this.state);
@@ -38,38 +36,40 @@ var SearchForm = React.createClass({
   render: function () {
     return (
       <div>
-          <Navbar collapseOnSelect id="navbar">
-    <Navbar.Header>
-      <Navbar.Brand>
-        <img src="../../assets/images/walking-man-clipart-3.png" responsive />
-      </Navbar.Brand>
-      <Navbar.Toggle />
-    </Navbar.Header>
-    <Navbar.Collapse>
-      <Nav>
-        <NavItem eventKey={1} id="navitem">Flaneur</NavItem>
-      </Nav>
-      <Nav pullRight>
-          <Form inline onSubmit={(event) => this.handleSubmit(event)}>
-            <FormGroup >
-              {' '}
-                <FormControl defaultValue={this.state.city}
+        <Navbar collapseOnSelect id="navbar" pullLeft>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <img src="../../assets/images/walking-man-clipart-3.png" responsive />
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+          <Navbar.Collapse>
+            <Nav>
+              <NavItem eventKey={1} id="navitem">Flaneur</NavItem>
+            </Nav>
+            <Nav id="form">
+              <Form inline onSubmit={(event) => this.handleSubmit(event)}>
+                <FormGroup >
+                  {' '}
+                  <FormControl defaultValue={this.state.city}
                     type='text'
                     id='city'
-                    onChange={(event) => this.handleUpdateTextInput(event)}/>
-            </FormGroup>
-             {' '}
+                    onChange={(event) => this.handleUpdateTextInput(event)} />
+                </FormGroup>
+                {' '}
                 <Button bsStyle="info" type='submit'
-                    htmlType='submit'
-                    loading={this.props.loading}>Find Attractions
+                  htmlType='submit'
+                  loading={this.props.loading}>Find Attractions
                 </Button>
-          </Form>
-          <Button onClick={this.props.logout}>Log Out</Button>
-      </Nav>
-    </Navbar.Collapse>
-  </Navbar>
-  </div>
-        
+              </Form>
+            </Nav>
+            <Nav pullRight>
+              <Button bsSize="small" bsStyle="info" onClick={this.props.logout} id="logout">Log Out</Button>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
+      </div>
+
     )
   }
 })

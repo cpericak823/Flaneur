@@ -10,7 +10,6 @@ var GenerateMap = React.createClass({
     },
     render: function () {
         console.log(this.props.attractions);
-
         return (
             <div>
                 <Row className="google">

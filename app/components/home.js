@@ -2,7 +2,7 @@ var React = require("react");
 var SearchForm = require("./search_form.js");
 var GenerateMap = require("./map.js");
 var axios = require("axios");
-import cookie from 'react-cookie';
+var cookie = require('react-cookie');
 
 var Home = React.createClass({
     isLoggedIn() {                
@@ -12,8 +12,6 @@ var Home = React.createClass({
         }
     },
     logOut(){
-        console.log('here');
-        
         axios.post('/logout').then(()=>{
             console.log(this.context);
             cookie.remove('userId');
