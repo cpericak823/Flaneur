@@ -14,7 +14,7 @@ Once you've installed all the modules, run the server.js file in Node to connect
 
 By visiting http://localhost:PORT (in this project, the PORT is either the one available in the Node environment or 3000), one is directed to this web app after connecting to the server.
 
-You can see the application in action here: [Flaneur](http://flaneur.herokuapp.com)
+You can see the application in action here: [Flaneur](https://flaneur2017.herokuapp.com)
 
 ## Deployment
 
@@ -35,7 +35,7 @@ This application was deployed using Heroku and JawsDB.
 ## Authors
 
 * **Cat Crooke** - *Business Visionary* - [CatCrooke](https://github.com/catcrookes)
-* **Cassie Pericak** - *Technical Coordinator * - [Cpericak823](https://github.com/cpericak823)
+* **Cassie Pericak** - *Technical Coordinator* - [Cpericak823](https://github.com/cpericak823)
 
 
 ## Inspiration
