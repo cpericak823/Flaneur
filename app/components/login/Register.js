@@ -82,6 +82,7 @@ class Register extends React.Component {
   render(){
     return (
       <div>
+        <Row className ="register-form">
       <Col xs={12} md={6}>
         <h2 className='register-header'>
           Register
@@ -117,6 +118,7 @@ class Register extends React.Component {
           </div>
         </form>
         </Col>
+        </Row>
      </div>
     )
   }

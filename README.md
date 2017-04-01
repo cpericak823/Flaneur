@@ -18,11 +18,11 @@ You can see the application in action here: [Flaneur](https://flaneur2017.heroku
 
 ## Deployment
 
-This application was deployed using Heroku and JawsDB.
+This application was deployed using Heroku and MondogoDB.
 
 ## Built With
 
-* [Bootstrap](http://getbootstrap.com/getting-started/) - The web framework used
+* [React Bootstrap](http://getbootstrap.com/getting-started/) - Web Framework
 * [Mongo/Mongoose](https://docs.mongodb.com/) - Database Management
 * [Passport](http://passportjs.org/docs) - User Authentication
 * [Heroku](https://devcenter.heroku.com/) - Web Deployment
