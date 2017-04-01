@@ -8,7 +8,7 @@ var Home = React.createClass({
     isLoggedIn() {                
         var validCookie = cookie.load('userId');
         if (!validCookie) {
-          this.context.router.push('/register');
+          this.context.router.redirect('/login');
         }
     },
     logOut(){
@@ -59,10 +59,10 @@ var Home = React.createClass({
 
     componentWillMount() {        
         this.initializeState();
+         this.isLoggedIn();  
     },
 
     render: function () {
-        this.isLoggedIn();    
         return (
             <div>
                 <div className="main-content">

@@ -11,6 +11,10 @@ router.post('/register', function (req, res, next) {
   }), req.body.password, function (err) {
     if (err) {
       console.log('error registering user!');
+      res.status(400).send({ success: false, message: err });
+    }
+    else {
+      res.json({});
     }
   });
 });
@@ -22,7 +26,7 @@ router.post('/login', function (req, res, next) {
     }
     // Generate a JSON response reflecting authentication status
     if (!user) {
-      return res.send({ success: false, message: 'authentication failed' });
+      return res.status(401).send({ success: false, message: 'authentication failed' });
     }
     req.login(user, loginErr => {
       if (loginErr) {

@@ -12,18 +12,19 @@ function initMap(component) {
         var directionsDisplay = new google.maps.DirectionsRenderer;
         console.log(component.refs);
 
-        var map = new google.maps.Map(component.refs.map.getDOMNode(), {
-            zoom: 6,
-            center: { lat: 41.85, lng: -87.65 }
-        });
-        directionsDisplay.setMap(map);
+        if (component.refs.map) {
+            var map = new google.maps.Map(component.refs.map.getDOMNode(), {
+                zoom: 6,
+                center: { lat: 41.85, lng: -87.65 }
+            });
+            directionsDisplay.setMap(map);
 
-        document.getElementById('submit').addEventListener('click', function () {
-            calculateAndDisplayRoute(directionsService, directionsDisplay);
-        });
+            document.getElementById('submit').addEventListener('click', function () {
+                calculateAndDisplayRoute(directionsService, directionsDisplay);
+            });
+        }
     };
 }
-
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     var waypts = [];
     var checkboxArray = document.getElementById('waypoints');

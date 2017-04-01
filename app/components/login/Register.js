@@ -41,7 +41,8 @@ class Register extends React.Component {
 
   // Data Request Methods
 
-  createUser() {
+  createUser(event) {
+    event.preventDefault();
     this.startLoading();
     console.log(this.state);
     axios.post('/register', this.state)
@@ -49,7 +50,6 @@ class Register extends React.Component {
         this.sendSuccessNotification();
         this.endLoading();
         this.redirectToHome();
-        console.log(registerObj);
       })
       .catch((error) => {
         this.sendErrorNotification();
@@ -87,7 +87,7 @@ class Register extends React.Component {
         <h2 className='register-header'>
           Register
         </h2>
-        <form onSubmit={(registerObj) => this.createUser()}>
+        <form onSubmit={(event) => this.createUser(event)}>
           <div className='register-email'>
             <label htmlFor='username'>Email</label><br/>
             <input 
